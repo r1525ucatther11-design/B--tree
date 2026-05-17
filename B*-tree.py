@@ -137,6 +137,11 @@ class BStarTree:
 tree = BStarTree(t=3)
 
 data = random.sample(range(1, 1_000_000), 10_000)
+with open("data.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["value"])  # заголовок столбца
+    for x in data:
+        writer.writerow([x]) # для отчета
 
 # insert test
 insert_results = []
